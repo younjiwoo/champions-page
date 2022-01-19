@@ -1,2 +1,2 @@
 export * from './Header';
-export * from './SummonerStats';
+export * from './Summoner';

@@ -1,12 +1,12 @@
 import React from 'react';
 import { HeaderWrapper, HeaderContent } from './Header.style';
-import { SearchBar } from './SearchBar';
+import { HeaderSearch } from './';
 
 export const Header = () => {
 	return (
 		<HeaderWrapper>
 			<HeaderContent>
-				<SearchBar />
+				<HeaderSearch />
 			</HeaderContent>
 		</HeaderWrapper>
 	);

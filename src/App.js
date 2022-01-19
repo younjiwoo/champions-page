@@ -1,10 +1,10 @@
-import { Header, SummonerStats } from '../src/components';
+import { Header, Summoner } from './components';
 
 function App() {
 	return (
 		<div>
 			<Header />
-			<SummonerStats></SummonerStats>
+			<Summoner />
 		</div>
 	);
 }
