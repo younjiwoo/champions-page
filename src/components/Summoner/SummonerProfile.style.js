@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const SummonerProfileWrapper = styled.div`
 	width: 1100px;
 	margin: 0 auto;
-	padding: 12px 20px;
+	padding: 0 20px;
 	box-sizing: border-box;
 `;
 
 export const PrevTiers = styled.ul`
 	list-style: none;
 	display: inline-block;
-	margin: 0;
+	margin: 15px 0 10px;
 	padding: 0;
 `;
 
@@ -33,7 +33,6 @@ export const Tier = styled.li`
 export const SummonerProfileContent = styled.div`
 	display: flex;
 	flex-direction: row;
-	margin-top: 10px;
 `;
 
 export const SummonerProfileImg = styled.div`

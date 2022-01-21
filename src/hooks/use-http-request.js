@@ -4,22 +4,25 @@ const useHttpRequest = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 
-	const sendRequest = useCallback(async (requestConfig, applyData) => {
+	const sendRequest = useCallback(async (param, applyData) => {
 		setIsLoading(true);
 		setError(null);
 
 		try {
-			const response = await fetch(requestConfig.url);
+			const response = await fetch(
+				`https://codingtest.op.gg/api/summoner/${param}`
+			);
 
 			if (!response.ok) {
 				throw new Error('something went wrong!');
 			}
 
 			const data = await response.json();
-			console.log('useHttpRequest에서 data--', data);
+
 			applyData(data);
 		} catch (error) {
 			setError(error.message || 'Something went wrong!');
+
 			console.log('error here!', error);
 		}
 

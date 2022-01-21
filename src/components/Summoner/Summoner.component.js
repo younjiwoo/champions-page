@@ -1,13 +1,16 @@
 import React from 'react';
 import { SummonerProfile, SummonerContent } from '.';
 import { SummonerWrapper, Border } from './Summoner.style';
+import SummonerProvider from '../../store/SummonerProvider';
 
 export const Summoner = () => {
 	return (
-		<SummonerWrapper>
-			<SummonerProfile />
-			<Border />
-			<SummonerContent />
-		</SummonerWrapper>
+		<SummonerProvider>
+			<SummonerWrapper>
+				<SummonerProfile />
+				<Border />
+				<SummonerContent />
+			</SummonerWrapper>
+		</SummonerProvider>
 	);
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react/cjs/react.development';
 import {
 	SummonerProfileWrapper,
 	PrevTiers,
@@ -10,30 +9,15 @@ import {
 	SummonerUsername,
 	SummonerLadderRanking,
 } from './SummonerProfile.style';
-import useHttpRequest from '../../hooks/use-http-request';
+import { useSummoner } from '../../store/summoner-context';
 
 export const SummonerProfile = () => {
-	const [summoner, setSummoner] = useState(null);
-
-	const { sendRequest, isLoading, error } = useHttpRequest();
-
-	useEffect(() => {
-		const transformSummoner = (data) => {
-			setSummoner(data.summoner);
-		};
-
-		sendRequest(
-			{
-				url: 'https://codingtest.op.gg/api/summoner/asd6',
-			},
-			transformSummoner
-		);
-	}, [sendRequest]);
+	const { summoner } = useSummoner();
 
 	return (
 		<SummonerProfileWrapper>
 			<PrevTiers>
-				{summoner?.previousTiers.map((tier, idx) => {
+				{summoner?.previousTiers?.map((tier, idx) => {
 					return (
 						<Tier key={idx}>
 							<span className="font-bold">S{tier.season}</span>{' '}
@@ -52,7 +36,7 @@ export const SummonerProfile = () => {
 					<img
 						className="border-img"
 						src={summoner?.profileBorderImageUrl}
-						alt="프로필 이미지 테두리"
+						alt=""
 					/>
 				</SummonerProfileImg>
 				<SummonerProfileText>
@@ -60,9 +44,9 @@ export const SummonerProfile = () => {
 					<SummonerLadderRanking>
 						레더 랭킹{' '}
 						<strong>
-							{summoner?.ladderRank.rank.toLocaleString()}
+							{summoner?.ladderRank?.rank?.toLocaleString()}
 						</strong>
-						위 (상위 {summoner?.ladderRank.rankPercentOfTop}%)
+						위 (상위 {summoner?.ladderRank?.rankPercentOfTop}%)
 					</SummonerLadderRanking>
 				</SummonerProfileText>
 			</SummonerProfileContent>
