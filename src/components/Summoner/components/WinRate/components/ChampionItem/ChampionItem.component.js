@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-	ChampionItem,
+	ChampionItemWrapper,
 	ChampionImage,
 	TopRow,
 	BottomRow,
-} from './ChampionList.style';
+} from './ChampionItem.style';
 
-export const ChampionList = ({ champion, idx }) => {
+export const ChampionItem = ({ champion, idx }) => {
 	const {
 		imageUrl,
 		name,
@@ -22,7 +22,7 @@ export const ChampionList = ({ champion, idx }) => {
 
 	// 중복되는 id가 있어서 key={id}를 못 쓰고, 임시적으로 우선 idx를 씀:
 	return (
-		<ChampionItem key={idx}>
+		<ChampionItemWrapper key={idx}>
 			<ChampionImage src={imageUrl} alt="챔피언 프로필 사진" />
 			<div>
 				<TopRow>{name}</TopRow>
@@ -42,6 +42,6 @@ export const ChampionList = ({ champion, idx }) => {
 				</TopRow>
 				<BottomRow>{games}게임</BottomRow>
 			</div>
-		</ChampionItem>
+		</ChampionItemWrapper>
 	);
 };

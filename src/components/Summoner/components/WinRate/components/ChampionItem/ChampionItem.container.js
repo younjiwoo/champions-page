@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChampionList } from './ChampionList.component';
+import { ChampionItem } from './ChampionItem.component';
 import { getWinRate } from '../../../../../../utils';
 
-export const ChampionListContainer = ({ champions }) => {
+export const ChampionItemContainer = ({ champions }) => {
 	return champions ? (
 		champions.map((ch, idx) => {
 			const {
@@ -31,9 +31,9 @@ export const ChampionListContainer = ({ champions }) => {
 					? 'green'
 					: '';
 
-			// key={idx}에서 id 대신 인덱스를 쓴 이유는, 중복되는 id가 있어서:
 			return (
-				<ChampionList
+				// key={idx}에서 id 대신 인덱스를 쓴 이유는, 중복되는 id가 있어서:
+				<ChampionItem
 					champion={{
 						imageUrl,
 						name,

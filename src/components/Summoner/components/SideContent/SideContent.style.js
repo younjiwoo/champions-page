@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
 export const SideContentWrapper = styled.aside`
-	width: 100%;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-row-gap: 8px;
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ChampionItem = styled.div`
+export const ChampionItemWrapper = styled.div`
 	height: 53px;
 	padding: 0 15px;
 	border-bottom: 1px solid #cdd2d2;
@@ -9,6 +9,10 @@ export const ChampionItem = styled.div`
 	justify-content: space-between;
 	grid-template-columns: 45px 80px 80px 35px;
 	grid-column-gap: 10px;
+
+	&:last-child {
+		border-bottom: none;
+	}
 `;
 
 export const ChampionImage = styled.img`

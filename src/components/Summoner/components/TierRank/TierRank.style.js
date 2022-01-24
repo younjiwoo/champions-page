@@ -11,7 +11,6 @@ export const TierRankWrapper = styled.section(
 	box-sizing: border-box;
 	font-size: 12px;
 	color: #879292;
-	margin-bottom: 8px;
 
 	img {
 		width: ${isSoloRank ? '104px' : '64px'};
