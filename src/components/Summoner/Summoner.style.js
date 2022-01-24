@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SummonerWrapper = styled.div`
 	background-color: #eaeaea;
+	height: 100%;
 `;
 
 export const Border = styled.div`
