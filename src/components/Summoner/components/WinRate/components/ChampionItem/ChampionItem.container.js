@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChampionItem } from './ChampionItem.component';
-import { getWinRate } from '../../../../../../utils';
+import { getWinRate, getKda, getKdaColor } from '../../../../../../utils';
 
 export const ChampionItemContainer = ({ champions }) => {
 	return champions ? (
@@ -21,15 +21,8 @@ export const ChampionItemContainer = ({ champions }) => {
 			} = ch;
 
 			const winRate = getWinRate(wins, losses);
-			const kda = ((kills + assists) / deaths).toFixed(2);
-			const kdaColor =
-				kda >= 5
-					? 'yellow'
-					: kda >= 4
-					? 'blue'
-					: kda >= 3
-					? 'green'
-					: '';
+			const kda = getKda(kills, deaths, assists);
+			const kdaColor = getKdaColor(kda);
 
 			return (
 				// key={idx}에서 id 대신 인덱스를 쓴 이유는, 중복되는 id가 있어서:
