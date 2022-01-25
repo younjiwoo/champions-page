@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SummonerProfileWrapper = styled.div`
-	width: 1100px;
+	width: 1000px;
 	margin: 0 auto;
 	padding: 0 20px;
 	box-sizing: border-box;

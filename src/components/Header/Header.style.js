@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderContent = styled.div`
-	width: 1100px;
+	width: 1000px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: right;

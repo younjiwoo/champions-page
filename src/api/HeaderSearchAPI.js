@@ -1,4 +1,4 @@
-export const getSummoners = async (e) => {
+export const getMatches = async (e) => {
 	// TODO
 	try {
 		const searchTerm = e.target.value;

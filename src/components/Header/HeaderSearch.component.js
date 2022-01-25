@@ -1,10 +1,10 @@
 import React from 'react';
-import { getSummoners } from '../../api/HeaderSearchAPI';
+import { getMatches } from '../../api/HeaderSearchAPI';
 import { HeaderSearchForm, InputField, SearchBtn } from './HeaderSearch.style';
 
 export const HeaderSearch = () => {
 	const handleInputChange = (e) => {
-		const games = getSummoners(e);
+		const games = getMatches(e);
 		return games;
 	};
 
