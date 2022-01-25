@@ -7,8 +7,10 @@ import {
 } from '../../../../../../utils/gameUtils';
 
 export const ChampionItemContainer = ({ champions }) => {
-	return champions ? (
-		champions.map((ch, idx) => {
+	let championList = [];
+
+	if (champions) {
+		championList = champions.map((ch, idx) => {
 			const {
 				assists,
 				cs,
@@ -47,8 +49,8 @@ export const ChampionItemContainer = ({ champions }) => {
 					key={idx}
 				/>
 			);
-		})
-	) : (
-		<>loading...</>
-	);
+		});
+	}
+
+	return championList;
 };

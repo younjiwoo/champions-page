@@ -8,10 +8,12 @@ import { MainContentHeaderChampions } from './MainContentHeaderChampions.compone
 
 export const MainContentHeaderChampionsContainer = ({
 	champions,
-	isLoading,
+	// isLoading,
 }) => {
-	if (!isLoading && champions) {
-		let championsCopy = [...champions];
+	let championsCopy = [];
+
+	if (champions) {
+		championsCopy = [...champions];
 
 		const leng = champions.length;
 
@@ -51,9 +53,7 @@ export const MainContentHeaderChampionsContainer = ({
 				};
 			} else return '';
 		});
-
-		return <MainContentHeaderChampions championList={championsCopy} />;
-	} else {
-		return <>loading...</>;
 	}
+
+	return <MainContentHeaderChampions championList={championsCopy} />;
 };

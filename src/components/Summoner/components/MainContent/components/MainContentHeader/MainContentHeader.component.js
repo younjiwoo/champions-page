@@ -24,10 +24,7 @@ export const MainContentHeader = ({
 				champions={champions}
 				isLoading={isLoading}
 			/>
-			<MainContentHeaderPositionsContainer
-				positions={positions}
-				isLoading={isLoading}
-			/>
+			<MainContentHeaderPositionsContainer positions={positions} />
 		</MainContentHeaderWrapper>
 	);
 };

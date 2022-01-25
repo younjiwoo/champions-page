@@ -7,6 +7,8 @@ import {
 import { MainContentHeaderSummary } from './MainContentHeaderSummary.component';
 
 export const MainContentHeaderSummaryContainer = ({ summary, isLoading }) => {
+	let props = {};
+
 	if (!isLoading && summary) {
 		const { wins, losses, kills, deaths, assists } = summary;
 
@@ -14,7 +16,7 @@ export const MainContentHeaderSummaryContainer = ({ summary, isLoading }) => {
 		const winRate = getWinRate(wins, losses);
 		const kdaColor = getKdaColor(kda);
 
-		const props = {
+		props = {
 			gameWinsLosses: `${wins + losses}전 ${wins}승 ${losses}패`,
 			winRate,
 			kills,
@@ -23,9 +25,6 @@ export const MainContentHeaderSummaryContainer = ({ summary, isLoading }) => {
 			kda,
 			kdaColor,
 		};
-
-		return <MainContentHeaderSummary props={{ ...props }} />;
-	} else {
-		return <>loading...</>;
 	}
+	return <MainContentHeaderSummary props={{ ...props }} />;
 };
