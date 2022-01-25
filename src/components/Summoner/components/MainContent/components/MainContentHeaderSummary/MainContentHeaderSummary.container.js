@@ -1,5 +1,9 @@
 import React from 'react';
-import { getKda, getKdaColor, getWinRate } from '../../../../../../utils';
+import {
+	getKda,
+	getKdaColor,
+	getWinRate,
+} from '../../../../../../utils/gameUtils';
 import { MainContentHeaderSummary } from './MainContentHeaderSummary.component';
 
 export const MainContentHeaderSummaryContainer = ({ summary, isLoading }) => {

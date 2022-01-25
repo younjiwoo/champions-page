@@ -7,5 +7,3 @@ export const MainContentHeaderWrapper = styled.section`
 	display: grid;
 	grid-template-columns: 276px 228px 184px;
 `;
-
-export const MainContentPositions = styled.div``;

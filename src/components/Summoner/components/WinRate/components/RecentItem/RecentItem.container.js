@@ -1,5 +1,5 @@
 import React from 'react';
-import { getWinRate } from '../../../../../../utils';
+import { getWinRate } from '../../../../../../utils/gameUtils';
 import { RecentItem } from './RecentItem.component';
 
 export const RecentItemContainer = ({ recentWinRate }) => {

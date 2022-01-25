@@ -1,6 +1,10 @@
 import React from 'react';
 import { ChampionItem } from './ChampionItem.component';
-import { getWinRate, getKda, getKdaColor } from '../../../../../../utils';
+import {
+	getWinRate,
+	getKda,
+	getKdaColor,
+} from '../../../../../../utils/gameUtils';
 
 export const ChampionItemContainer = ({ champions }) => {
 	return champions ? (

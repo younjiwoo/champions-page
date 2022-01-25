@@ -1,54 +1,47 @@
 import React from 'react';
 import {
-	MainContentChampions,
-	ChampionItem,
-	ChampionTextWrapper,
-	ChampionName,
-	ChampionStats,
-	NoChampion,
+	MainContentPositions,
+	PositionListWrapper,
+	PositionItem,
+	PositionTextWrapper,
+	PositionName,
+	PositionWinRate,
 } from './MainContentHeaderPositions.style';
-import noImage from './assets/group.svg';
 
-export const MainContentHeaderPositions = ({ championList }) => {
+export const MainContentHeaderPositions = ({ positionList }) => {
 	return (
-		<MainContentChampions>
-			{championList.map((champ, idx) => {
-				if (champ) {
-					const {
-						imageUrl,
-						kda,
-						kdaColor,
-						name,
-						winLossString,
-						winRate,
-					} = champ;
-
+		<MainContentPositions>
+			<div>선호 포지션 (랭크)</div>
+			<PositionListWrapper>
+				{positionList.map((pos, idx) => {
 					return (
-						<ChampionItem key={idx}>
-							<img src={imageUrl || noImage} alt="챔피언 사진" />
-							<ChampionTextWrapper>
-								<ChampionName>{name}</ChampionName>
-								<ChampionStats>
+						// id가 없어서 우선 idx로:
+						<PositionItem key={idx}>
+							<img src={pos.imageUrl} alt={`${pos.kor} 아이콘`} />
+							<PositionTextWrapper>
+								<PositionName>{pos.kor}</PositionName>
+								<PositionWinRate>
 									<div className="left">
-										<span className="bold">{winRate}</span>%
-										({winLossString})
+										<span className="bold">
+											{pos.winRate}
+										</span>
+										%
 									</div>
-									<div className={`right ${kdaColor}`}>
-										{kda} 평점
+									<div className="right">
+										승률{' '}
+										<span className="blackish">
+											<span className="bold">
+												{pos.winRate}
+											</span>
+											%
+										</span>
 									</div>
-								</ChampionStats>
-							</ChampionTextWrapper>
-						</ChampionItem>
+								</PositionWinRate>
+							</PositionTextWrapper>
+						</PositionItem>
 					);
-				} else {
-					return (
-						<ChampionItem key={idx}>
-							<img src={noImage} alt="챔피언 사진" />
-							<NoChampion>챔피언 정보가 없습니다.</NoChampion>
-						</ChampionItem>
-					);
-				}
-			})}
-		</MainContentChampions>
+				})}
+			</PositionListWrapper>
+		</MainContentPositions>
 	);
 };

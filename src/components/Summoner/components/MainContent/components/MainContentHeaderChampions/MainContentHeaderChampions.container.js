@@ -1,5 +1,9 @@
 import React from 'react';
-import { getKda, getKdaColor, getWinRate } from '../../../../../../utils';
+import {
+	getKda,
+	getKdaColor,
+	getWinRate,
+} from '../../../../../../utils/gameUtils';
 import { MainContentHeaderChampions } from './MainContentHeaderChampions.component';
 
 export const MainContentHeaderChampionsContainer = ({
