@@ -14,7 +14,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
+.bold {
+	font-weight: bold;
+}
+
+.scarlet {
+	color: #d0021b;
 }

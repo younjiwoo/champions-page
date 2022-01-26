@@ -41,10 +41,6 @@ export const PositionWinRate = styled.div`
 		color: #333;
 	}
 
-	.bold {
-		font-weight: bold;
-	}
-
 	.left {
 		color: #1f8ecd;
 		padding-right: 6px;

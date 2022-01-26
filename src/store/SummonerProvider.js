@@ -12,8 +12,8 @@ const SummonerProvider = (props) => {
 			setSummoner(data.summoner);
 		};
 
-		// todo: 하드코딩 되어있는 부분 - 아이디 asd6
-		sendRequest('asd6', transformSummoner);
+		// todo: 하드코딩 되어있는 부분 - 아이디 카이사
+		sendRequest('카이사', transformSummoner);
 	}, [sendRequest]);
 
 	const summonContext = useMemo(
