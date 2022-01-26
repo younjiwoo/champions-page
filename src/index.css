@@ -18,6 +18,10 @@ body {
 	font-weight: bold;
 }
 
+.black {
+	color: #000;
+}
+
 .scarlet {
 	color: #d0021b;
 }

@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const GameTimeWrapper = styled.div`
-	border: solid 1px red;
 	height: 100%;
-	width: 66px;
+	width: 80px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
