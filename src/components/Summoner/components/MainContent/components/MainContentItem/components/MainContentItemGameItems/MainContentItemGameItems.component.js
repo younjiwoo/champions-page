@@ -3,12 +3,8 @@ import {
 	ItemsWrapper,
 	WardTextWrapper,
 	WardImage,
-	Item,
-	ItemImage,
-	NoItem,
-	ItemTooltipWrapper,
 } from './MainContentItemGameItems.style';
-import { Tooltip } from '../../../../../../../UI';
+import { GameItemContent } from './components/GameItemContent';
 
 export const MainContentItemGameItems = ({ gameObj }) => {
 	const {
@@ -20,33 +16,30 @@ export const MainContentItemGameItems = ({ gameObj }) => {
 		handleMouseEnter,
 		handleMouseLeave,
 		isTooltipVisible,
+		tooltipIdx,
 	} = gameObj;
+
+	const numOfItems = items.length;
 
 	return (
 		<ItemsWrapper>
 			<div>
 				{items.map((item, i) => {
 					return (
-						// <ItemTooltipWrapper>
-						<Item key={i}>
-							{item ? (
-								<ItemImage
-									onMouseEnter={handleMouseEnter}
-									onMouseLeave={handleMouseLeave}
-									src={item.imageUrl}
-									alt="아이템 아이콘"
-								/>
-							) : (
-								<NoItem isWin={isWin} />
-							)}
-						</Item>
-						// {isTooltipVisible && <Tooltip text="hey" />}
-						// </ItemTooltipWrapper>
+						<GameItemContent
+							key={i}
+							item={item}
+							buildSrc={buildSrc}
+							isWin={isWin}
+							numOfItems={numOfItems}
+							isTooltipVisible={isTooltipVisible}
+							tooltipIdx={tooltipIdx}
+							itemIdx={i}
+							handleMouseEnter={handleMouseEnter}
+							handleMouseLeave={handleMouseLeave}
+						/>
 					);
 				})}
-				<Item>
-					<ItemImage src={buildSrc} alt="빌드 아이콘" />
-				</Item>
 			</div>
 			{controlWard && (
 				<WardTextWrapper>

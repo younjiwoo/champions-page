@@ -7,8 +7,6 @@ import { MainContentItemStatsContainer } from './components/MainContentItemStats
 import { MainContentItemGameItemsContainer } from './components/MainContentItemGameItems/MainContentItemGameItems.container';
 
 export const MainContentItem = ({ game }) => {
-	console.log('item game: ', game);
-
 	return (
 		<MainContentItemWrapper isWin={game?.isWin}>
 			<MainContentItemTimeContainer game={game} />
