@@ -5,13 +5,15 @@ import redWard from './assets/icon-ward-red.svg';
 import { blueBuild, redBuild } from './assets';
 
 export const MainContentItemGameItemsContainer = ({ game }) => {
-	const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+	const [isTooltipVisible, setIsTooltipVisible] = useState(true);
+	const [tooltipIdx, setTooltipIdx] = useState(null);
 
 	let gameObj = {};
 	let itemsCopy = [];
 
-	const handleMouseEnter = () => {
+	const handleMouseEnter = (i) => {
 		setIsTooltipVisible(true);
+		setTooltipIdx(i);
 	};
 
 	const handleMouseLeave = () => {
@@ -19,22 +21,23 @@ export const MainContentItemGameItemsContainer = ({ game }) => {
 	};
 
 	if (game) {
-		const { items, isWin } = game;
+		const { items, isWin, stats } = game;
+		const { sightWardsBought, visionWardsBought } = stats.ward;
 
-		const leng = items.length;
+		const totalNum = 8; // 보여줘야 하는 아이템 개수
+		const numOfItems = items.length; // 데이터로부터 받은 아이템 개수
 
 		itemsCopy = [...items];
 
-		if (leng < 7) {
-			const num = 7 - leng;
-			const arr = new Array(num).fill('');
+		if (numOfItems < totalNum) {
+			const num = totalNum - numOfItems;
+			const arr = new Array(num).fill(undefined);
 
 			itemsCopy = itemsCopy.concat(arr);
 		}
 
-		const controlWard =
-			game?.stats.ward.sightWardsBought +
-			game?.stats.ward.visionWardsBought;
+		const controlWard = sightWardsBought + visionWardsBought;
+
 		const wardSrc = isWin ? blueWard : redWard;
 		const buildSrc = isWin ? blueBuild : redBuild;
 
@@ -47,6 +50,7 @@ export const MainContentItemGameItemsContainer = ({ game }) => {
 			handleMouseEnter,
 			handleMouseLeave,
 			isTooltipVisible,
+			tooltipIdx,
 		};
 	}
 

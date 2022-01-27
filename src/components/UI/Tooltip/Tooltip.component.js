@@ -1,6 +1,11 @@
 import React from 'react';
-import { TooltipWrapper } from './Tooltip.style';
+import { TooltipWrapper, TooltipArrow } from './Tooltip.style';
 
-export const Tooltip = ({ text }) => {
-	return <TooltipWrapper>{text}</TooltipWrapper>;
+export const Tooltip = (props) => {
+	return (
+		<TooltipWrapper className="up">
+			{props.children}
+			<TooltipArrow className="up" />
+		</TooltipWrapper>
+	);
 };
