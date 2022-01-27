@@ -7,7 +7,7 @@ export const ChampionItemWrapper = styled.div`
 	display: grid;
 	align-items: center;
 	justify-content: space-between;
-	grid-template-columns: 45px 80px 80px 35px;
+	grid-template-columns: 45px 79px 82px 34px;
 	grid-column-gap: 10px;
 
 	&:last-child {

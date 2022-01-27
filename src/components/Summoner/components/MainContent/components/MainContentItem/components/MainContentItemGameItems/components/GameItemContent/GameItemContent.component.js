@@ -44,8 +44,6 @@ export const GameItemContent = ({
 
 		itemContent = itemImage;
 		tooltipText = itemJson.data[itemId].plaintext;
-
-		console.log('itemId: ', itemId);
 	}
 
 	const lastItem = numOfItems - 1;
