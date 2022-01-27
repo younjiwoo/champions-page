@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const ChampionItemWrapper = styled.div`
 	height: 53px;
-	padding: 0 15px;
+	padding: 0 10px;
 	border-bottom: 1px solid #cdd2d2;
 	display: grid;
 	align-items: center;
 	justify-content: space-between;
-	grid-template-columns: 45px 79px 82px 34px;
+	grid-template-columns: 45px 90px 82px 34px;
 	grid-column-gap: 10px;
 
 	&:last-child {
