@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { MainTabs } from '../MainTabs/MainTabs.component';
-import { MainContentWrapper, MainContentList } from './MainContent.style';
+import { MainContentWrapper } from './MainContent.style';
 import { MainContentHeader } from './components';
+import { MainContentListContainer } from './components/MainContentList/MainContentList.container';
 
 export const MainContent = ({
 	games,
@@ -25,7 +26,7 @@ export const MainContent = ({
 					positions={positions}
 					isLoading={isLoading}
 				/>
-				<MainContentList games={games}>MainContentList</MainContentList>
+				<MainContentListContainer games={games} />
 			</MainContentWrapper>
 		</main>
 	);

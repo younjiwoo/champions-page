@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import {
-	MainContentHeaderWrapper,
-	MainContentPositions,
-} from './MainContentHeader.style';
+import React from 'react';
+import { MainContentHeaderWrapper } from './MainContentHeader.style';
 import { MainContentHeaderChampionsContainer } from '../MainContentHeaderChampions';
 import { MainContentHeaderSummaryContainer } from '../MainContentHeaderSummary';
-import { MainContentChampions } from '../MainContentHeaderChampions/MainContentHeaderChampions.style';
+import { MainContentHeaderPositionsContainer } from '../MainContentHeaderPositions/MainContentHeaderPositions.container';
 
 export const MainContentHeader = ({
 	champions,
@@ -27,7 +24,7 @@ export const MainContentHeader = ({
 				champions={champions}
 				isLoading={isLoading}
 			/>
-			<MainContentPositions>f</MainContentPositions>
+			<MainContentHeaderPositionsContainer positions={positions} />
 		</MainContentHeaderWrapper>
 	);
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarGraph } from './BarGraph.component';
-import { getWinRate, getLossRate } from '../../../../../../utils';
+import { getWinRate, getLossRate } from '../../../../../../utils/gameUtils';
 
 export const BarGraphContainer = ({ wins, losses }) => {
 	const winRate = getWinRate(wins, losses);

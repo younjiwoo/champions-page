@@ -38,10 +38,6 @@ export const ChampionStats = styled.div`
 	.left {
 		padding-right: 6px;
 		border-right: 1px solid #cdd2d2;
-
-		.bold {
-			font-weight: bold;
-		}
 	}
 
 	.right {

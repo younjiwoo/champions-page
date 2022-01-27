@@ -13,8 +13,8 @@ export const WinRateContainer = () => {
 			setWinRate({ ...data });
 		};
 
-		// todo: 하드코딩 되어있는 부분 - 아이디 asd6
-		sendRequest('asd6/mostInfo', addWinRateData);
+		// todo: 하드코딩 되어있는 부분 - 아이디 카이사
+		sendRequest('카이사/mostInfo', addWinRateData);
 	}, [sendRequest]);
 
 	return <WinRate {...winRate} />;

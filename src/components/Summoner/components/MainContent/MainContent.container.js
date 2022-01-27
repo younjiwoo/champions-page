@@ -12,8 +12,8 @@ export const MainContentContainer = () => {
 			setMatches({ ...data, isLoading });
 		};
 
-		// todo: 하드코딩 되어있는 부분 - 아이디 asd6
-		sendRequest('asd6/matches', getMatches);
+		// todo: 하드코딩 되어있는 부분 - 아이디 카이사
+		sendRequest('카이사/matches', getMatches);
 	}, [sendRequest]);
 
 	return <MainContent {...matches} />;

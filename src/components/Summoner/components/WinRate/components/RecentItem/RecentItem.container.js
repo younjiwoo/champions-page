@@ -1,10 +1,12 @@
 import React from 'react';
-import { getWinRate } from '../../../../../../utils';
+import { getWinRate } from '../../../../../../utils/gameUtils';
 import { RecentItem } from './RecentItem.component';
 
 export const RecentItemContainer = ({ recentWinRate }) => {
-	return recentWinRate ? (
-		recentWinRate.map((ch, idx) => {
+	let recentList = [];
+
+	if (recentWinRate) {
+		recentList = recentWinRate.map((ch, idx) => {
 			const { imageUrl, name, wins, losses } = ch;
 
 			const winRate = getWinRate(wins, losses);
@@ -17,8 +19,8 @@ export const RecentItemContainer = ({ recentWinRate }) => {
 					key={idx}
 				/>
 			);
-		})
-	) : (
-		<>loading...</>
-	);
+		});
+	}
+
+	return recentList;
 };
