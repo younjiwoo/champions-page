@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { SearchListContainer } from '../SearchList/SearchList.container';
 import { SearchBarForm, InputField, SearchBtn } from './SearchBar.style';
 
@@ -9,6 +9,28 @@ export const SearchBar = () => {
 	);
 	const [isOpen, setIsOpen] = useState(false);
 
+	const searchBarRef = useRef(null);
+
+	const handleClickOutside = useCallback((e) => {
+		if (searchBarRef.current.contains(e.target)) {
+			return;
+		}
+
+		setIsOpen(false);
+	}, []);
+
+	useEffect(() => {
+		if (isOpen) {
+			document.addEventListener('mousedown', handleClickOutside);
+		} else {
+			document.removeEventListener('mousedown', handleClickOutside);
+		}
+
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [isOpen, handleClickOutside]);
+
 	useEffect(() => {
 		localStorage.setItem('keywords', JSON.stringify(keywordList));
 	}, [keywordList]);
@@ -18,7 +40,7 @@ export const SearchBar = () => {
 		setKeyword(val);
 	};
 
-	const handleSearchList = () => {
+	const handleFocus = () => {
 		setIsOpen(true);
 	};
 
@@ -33,8 +55,16 @@ export const SearchBar = () => {
 		const newKeyword = {
 			id: Date.now(),
 			text,
+			isBookmarked: false,
 		};
-		setKeywordList([newKeyword, ...keywordList]);
+
+		// 최대 8개까지만 저장되도록:
+		const maxNum = 8;
+		let copiedKeywordList = [...keywordList];
+		if (keywordList.length === maxNum) {
+			copiedKeywordList.splice(-1, 1);
+		}
+		setKeywordList([newKeyword, ...copiedKeywordList]);
 	};
 
 	const handleRemoveKeyword = (id) => {
@@ -44,14 +74,12 @@ export const SearchBar = () => {
 		setKeywordList(nextKeyword);
 	};
 
-	console.log('keyword', keyword);
-
 	return (
-		<SearchBarForm>
+		<SearchBarForm ref={searchBarRef}>
 			<InputField
 				value={keyword}
 				onChange={handleKeywordChange}
-				onFocus={handleSearchList}
+				onFocus={handleFocus}
 				onKeyDown={handleInputChange}
 				placeholder="소환사명, 챔피언..."
 			/>
@@ -69,6 +97,7 @@ export const SearchBar = () => {
 					setIsOpen={setIsOpen}
 					keyword={keyword}
 					keywordList={keywordList}
+					setKeywordList={setKeywordList}
 					handleRemoveKeyword={handleRemoveKeyword}
 				/>
 			)}

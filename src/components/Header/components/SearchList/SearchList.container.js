@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { SearchList } from './SearchList.component';
 import useHttpRequest from '../../../../hooks/use-http-request';
-import {} from './SearchList.style';
 
 export const SearchListContainer = ({
 	keyword,
 	keywordList,
+	setKeywordList,
 	setIsOpen,
 	isOpen,
 	handleRemoveKeyword,
@@ -17,7 +17,6 @@ export const SearchListContainer = ({
 	useEffect(() => {
 		if (keyword) {
 			const getSearchResult = (data) => {
-				console.log('검색 결과: ', data);
 				setSearchResult({ ...data.summoner });
 			};
 
@@ -33,6 +32,7 @@ export const SearchListContainer = ({
 			setIsOpen={setIsOpen}
 			isOpen={isOpen}
 			keywordList={keywordList}
+			setKeywordList={setKeywordList}
 			handleRemoveKeyword={handleRemoveKeyword}
 		/>
 	);

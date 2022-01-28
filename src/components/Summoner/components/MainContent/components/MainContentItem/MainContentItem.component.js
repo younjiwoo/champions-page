@@ -8,9 +8,6 @@ import { MainContentItemGameItemsContainer } from './components/MainContentItemG
 import { MainContentItemTeamsContainer } from './components/MainContentItemTeams';
 
 export const MainContentItem = ({ game }) => {
-	// console.log('game: ', game);
-	console.log('game: ', game);
-	console.log('game: ', game.needRenew);
 	return (
 		<MainContentItemWrapper isWin={game?.isWin}>
 			<MainContentItemTimeContainer game={game} />

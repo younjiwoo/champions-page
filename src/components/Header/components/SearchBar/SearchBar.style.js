@@ -17,6 +17,10 @@ export const InputField = styled.input`
 	border: 0;
 	padding: 0 0 0 14px;
 	border-radius: 2px;
+
+	&:focus {
+		outline: none;
+	}
 `;
 
 export const SearchBtn = styled.button`

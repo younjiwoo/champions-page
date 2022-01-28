@@ -10,10 +10,6 @@ export const MainContentHeader = ({
 	summary,
 	isLoading,
 }) => {
-	// console.log('---champions---', champions);
-	// console.log('---positions---', positions);
-	// console.log('---summary---', summary);
-
 	return (
 		<MainContentHeaderWrapper>
 			<MainContentHeaderSummaryContainer
