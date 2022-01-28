@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderSearchForm = styled.form`
+export const SearchBarForm = styled.form`
 	width: 260px;
 	height: 32px;
 	display: flex;
@@ -17,6 +17,10 @@ export const InputField = styled.input`
 	border: 0;
 	padding: 0 0 0 14px;
 	border-radius: 2px;
+
+	&:focus {
+		outline: none;
+	}
 `;
 
 export const SearchBtn = styled.button`
