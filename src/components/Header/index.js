@@ -1,2 +1,2 @@
 export * from './Header.component';
-export * from './HeaderSearch.component';
+export * from './components/SearchBar';

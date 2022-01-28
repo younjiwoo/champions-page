@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AutoSuggestWrapper = styled.div`
+export const SearchListWrapper = styled.div`
 	height: 200px;
 	position: absolute;
 	width: 100%;
@@ -10,7 +10,7 @@ export const AutoSuggestWrapper = styled.div`
 	box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
 `;
 
-export const AutoSuggestItem = styled.div`
+export const SearchListItem = styled.div`
 	padding: 7px 17px;
 	overflow: hidden;
 	box-sizing: border-box;

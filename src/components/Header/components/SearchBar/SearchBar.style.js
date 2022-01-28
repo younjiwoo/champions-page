@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderSearchForm = styled.form`
+export const SearchBarForm = styled.form`
 	width: 260px;
 	height: 32px;
 	display: flex;
